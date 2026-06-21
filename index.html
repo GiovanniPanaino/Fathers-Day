@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Happy Father's Day</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.82)),
+        url("file_0000000095e871f4905e52ca050652a5.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: min(92vw, 820px);
+      padding: 45px 30px;
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.52);
+      backdrop-filter: blur(9px);
+      border: 1px solid rgba(255, 213, 107, 0.35);
+      box-shadow:
+        0 0 45px rgba(255, 213, 107, 0.48),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 8vw, 5.8rem);
+      color: #ffd56b;
+      text-shadow: 0 0 20px rgba(255, 213, 107, 0.95);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 4vw, 2.4rem);
+      margin-bottom: 28px;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: clamp(1rem, 3vw, 1.32rem);
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    button {
+      padding: 15px 34px;
+      border-radius: 999px;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.25s ease;
+      box-shadow: 0 0 25px rgba(255, 213, 107, 0.45);
+    }
+
+    .mom-btn {
+      background: #ff8fab;
+      color: #2b000b;
+    }
+
+    .dad-btn {
+      background: #ffd56b;
+      color: #2b1b00;
+    }
+
+    button:hover,
+    button:focus {
+      transform: scale(1.08);
+      background: white;
+      outline: none;
+    }
+
+    .message {
+      display: none;
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      animation: fadeIn 0.8s ease;
+    }
+
+    .funny {
+      color: #ffccd8;
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      font-weight: bold;
+    }
+
+    .special {
+      color: #ffe9a8;
+    }
+
+    .sparkle {
+      position: fixed;
+      bottom: -60px;
+      color: #ffd56b;
+      font-size: 22px;
+      animation: float 8s linear infinite;
+      opacity: 0.85;
+      pointer-events: none;
+      text-shadow: 0 0 12px rgba(255, 213, 107, 0.9);
+    }
+
+    .sparkle:nth-child(1) { left: 8%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { left: 24%; animation-delay: 2s; }
+    .sparkle:nth-child(3) { left: 52%; animation-delay: 4s; }
+    .sparkle:nth-child(4) { left: 78%; animation-delay: 1s; }
+    .sparkle:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+    @keyframes float {
+      from {
+        transform: translateY(0) rotate(0deg);
+      }
+      to {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      margin-top: 35px;
+      font-size: 0.9rem;
+      opacity: 0.82;
+    }
+
+    @media (max-width: 520px) {
+      .card {
+        padding: 36px 20px;
+      }
+
+      button {
+        width: 100%;
+        max-width: 260px;
+      }
+
+      body {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sparkle">✨</div>
+  <div class="sparkle">⭐</div>
+  <div class="sparkle">✨</div>
+  <div class="sparkle">💛</div>
+  <div class="sparkle">⭐</div>
+
+  <main class="card">
+    <h1>Happy Father’s Day</h1>
+
+    <h2>I am a...</h2>
+
+    <div class="buttons">
+      <button class="mom-btn" onclick="showMomMessage()">Mother</button>
+      <button class="dad-btn" onclick="showDadMessage()">Dad</button>
+    </div>
+
+    <div id="momMessage" class="message funny">
+      Sorry, please try next year! 🌸😂
+    </div>
+
+    <div id="dadMessage" class="message special">
+      <p>
+        Today we honour the men who build more than homes, more than memories,
+        and more than families.
+      </p>
+
+      <p>
+        We honour the fathers who show up, stand strong, love deeply,
+        and carry more than they ever say out loud.
+      </p>
+
+      <p>
+        💛 A father’s love is not always loud.
+        Sometimes it is found in tired hands, early mornings, silent sacrifices,
+        and the strength to keep going when no one is watching.
+      </p>
+
+      <p>
+        Thank you for being one of the legends.
+      </p>
+    </div>
+
+    <footer>
+      Made with love for Father’s Day
+    </footer>
+  </main>
+
+  <script>
+    function showMomMessage() {
+      document.getElementById("dadMessage").style.display = "none";
+      document.getElementById("momMessage").style.display = "block";
+    }
+
+    function showDadMessage() {
+      document.getElementById("momMessage").style.display = "none";
+      document.getElementById("dadMessage").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
